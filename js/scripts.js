@@ -39,6 +39,21 @@ request.onload = function () {
 		errorMessage.textContent = `Droga... Parece que não tá funcionando isso aqui...`
 		app.appendChild(errorMessage)
 	}
+
+	/**
+	 * Exemplo de utilição do fetch como acesso à API
+	 */
+	fetch('https://ghibliapi.herokuapp.com/films')
+		.then(response => {
+			return response.json()
+		})
+		.then(data => {
+			// Work with JSON data here
+			console.log(data)
+		})
+		.catch(err => {
+			// Do something for an error here
+		})
 }
 
 // Send request
